@@ -1,0 +1,20 @@
+FROM node:lts as builder
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Bundle app source
+COPY . .
+
+# Install app dependencies
+RUN npm install
+
+# Generate build version
+RUN npm run-script build:dev
+
+
+FROM nginx:alpine
+
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+
+EXPOSE 80

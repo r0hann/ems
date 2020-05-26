@@ -1,0 +1,12 @@
+export const LEAVE_TYPE_DETAIL_URL = '/leave/typedetail';
+export const EMPLOYEE_DETAIL_URL = '/employees';
+export const USER_LEAVE_BALANCE_DETAIL_URL = '/user/leave/balancedetail';
+export const USER_LEAVE_REQUEST_URL = '/user/leave/request';
+export const USER_LEAVE_APP_DETAIL_URL = '/user/leave/applicationdetail';
+export const LEAVE_TYPE_FORM_ID_URL = '/leave/type/:id';
+export const LEAVE_BALANCE_DETAIL_URL = '/leave/balancedetail';
+export const LEAVE_BALANCE_ASSIGN_URL = '/leave/balance/assign';
+// export const=''
+// export const=''
+// export const=''
+// export const=''

@@ -1,0 +1,15 @@
+.color-warning {
+  color: #ffa500;
+}
+.color-success {
+  color: #008000;
+}
+.color-danger {
+  color: #ed5249;
+}
+button.color-disabled {
+  color: #808080;
+}
+.color-gray {
+  color: #808080;
+}

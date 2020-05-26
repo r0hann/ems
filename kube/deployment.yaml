@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: {{app_name}}
+  name: {{app_name}}
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: {{app_name}}
+    spec:
+      containers:
+        - image: {{image}}
+          name: {{app_name}}
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d
+              readOnly: true
+              name: nginx-react-default-conf
+      volumes:
+        - name: nginx-react-default-conf
+          configMap:
+            name: nginx-react-default-conf
+
+      imagePullSecrets:
+        - name: {{image_pull_secret}}

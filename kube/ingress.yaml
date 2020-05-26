@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/whitelist-source-range: "202.166.194.128/25,202.79.38.0/24,103.254.184.0/24,103.213.31.0/24,172.16.10.0/24"
+  name: {{app_name}}-service-ingress
+spec:
+  rules:
+    - host: {{host}}
+      http:
+        paths:
+          - backend:
+              serviceName: {{app_name}}-service
+              servicePort: 80
+            path: /
+  tls:
+    - secretName: {{tls_secret}}
